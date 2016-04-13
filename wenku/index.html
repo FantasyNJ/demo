@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>百度文库评分</title>
+<style>
+*{margin: 0;padding: 0;}
+strong,span{line-height: 20px;font-size:20px;}
+p{display: inline-block;outline: 1px solid red;}
+.star{display: inline-block;background: url(img/评分.png) no-repeat -39px 0;width:20px;height:19px;}
+</style>
+</head>
+<body>
+<strong>总体评价:</strong>
+<div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div><div class="star"></div>
+<span></span>
+<script>
+var aImg=document.getElementsByTagName('div');
+var oP=document.getElementsByTagName('p')[0];
+var oSpan=document.getElementsByTagName('span')[0];
+var on=0;
+var num=0;
+
+for(var i=0;i<aImg.length;i++){
+	aImg[i].index=i;
+	aImg[i].onmouseover=function(){
+		if(on){
+			for(var i=0;i<=num;i++){
+				aImg[i].style.backgroundPosition='';
+			}
+			oSpan.innerHTML='';
+		}
+		for(var i=0;i<=this.index;i++){
+			aImg[i].style.backgroundPosition='-1.9px 0';
+		}
+		fn1(this.index);
+	}
+	aImg[i].onmouseout=function(){
+		for(var i=0;i<=this.index;i++){
+			aImg[i].style.backgroundPosition='';
+		}
+		oSpan.innerHTML='';
+		if(on){
+			for(var i=0;i<=num;i++){
+				aImg[i].style.backgroundPosition='-1.9px 0';
+			}
+			fn1(this.index);
+		}
+	}
+	aImg[i].onclick=function(){
+		num=this.index;
+		for(var i=0;i<=num;i++){
+			aImg[i].style.backgroundPosition='-1.9px 0';
+		}
+		fn1(this.index);
+		on=1;
+	}
+}
+
+
+function fn1(z){
+	switch(z){
+		case 0:oSpan.innerHTML='很差';break;
+		case 1:oSpan.innerHTML='较差';break;
+		case 2:oSpan.innerHTML='还行';break;
+		case 3:oSpan.innerHTML='推荐';break;
+		default:oSpan.innerHTML='力荐';
+	}
+}
+</script>
+</body>
+</html>
