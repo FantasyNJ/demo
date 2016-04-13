@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>查找替换删除</title>
+<style>
+*{padding: 0;margin: 0;}
+#wrap{margin: 50px auto;width: 600px;}
+#p1{width: 500px;background: #ccc;border: 10px solid #ff0;padding: 20px;}
+#div1{width: 500px;padding: 20px;border: 10px solid #ff0;background: red;margin-top: 30px;}
+#div1 ul{height: 30px;border-bottom: 3px solid black;}
+#div1 ul li{float: left;list-style: none;width: 50px;height: 30px;text-align: center;line-height: 30px;background: #ccc;cursor: pointer;}
+#div1 .active{background: white;}
+#div1 div{margin-top: 10px;display: none;}
+span{background: yellow;}
+</style>
+</head>
+<body>
+<div id="wrap">
+<p id="p1">万科是由一个地方国营公司变成一个上市公司，用现在的时髦话来讲，它是一个最典型的混合所有制的企业。从国营改变到上市公司的时候，应该说我可以成为第二大股东，因为本身股权结构的改变，上市之前就是60%是国家股，40%是企业股，最后60%变成了40%，40%变成了25%，如果走这条路——地方国有企业慢慢的转，我可以成为第一大股东，就像很多现在的民营企业一样，虽然是上市公司，但是我绝对控股，但我没走这条路。回到今天的主题，“一带一路”如何让我们这些企业家往外投资，我觉得也应该是混合所有制。我们可以看到，国家的战略，修桥修路，资源的调配，大型国营企业扮演重要角色，开路修桥、修电站，重新调配能源。相对而言，民营企业显得有点力量不足，虽然看到机会，但是怎么做，很简单，混合所有制。混合所有制不一定是一块搞合资公司，各种资源优势，大型国企的，民营的活跃，再有国际上战略的对未来的把握，一定是个国际平台往前走。这是我想说的第一点，资源怎么整合，这是万科走的一条路。</p>
+<div id="div1">
+	<ul>
+		<li class="active">查找</li>
+		<li>替换</li>
+	</ul>
+	<div id="search">
+		<input type="text">
+		<input type="button" value="查找" >
+	</div>
+	<div id="replace">
+		<input type="text">
+		<input type="text">
+		<input type="button" value="替换">
+	</div>
+</div>
+</div>
+<script>
+var oP=document.getElementById('p1');
+var oDiv1=document.getElementById('div1');
+var aLi=oDiv1.getElementsByTagName('li');
+var oSearch=document.getElementById('search');
+var oReplace=document.getElementById('replace');
+var aInp1=oSearch.getElementsByTagName('input');
+var aInp2=oReplace.getElementsByTagName('input');
+var str=oP.innerHTML;
+
+oSearch.style.display='block';
+
+for(var i=0;i<aLi.length;i++){
+	aLi[i].index=i;
+	aLi[i].onclick=function(){
+		for(var i=0;i<aLi.length;i++){
+			aLi[i].className='';
+			oSearch.style.display='none';
+			oReplace.style.display='none';
+		}
+		this.className='active';
+		if(this.index==0){
+			oSearch.style.display='block';
+		}
+		if(this.index==1){
+			oReplace.style.display='block';
+		}
+	}
+}
+
+aInp1[1].onclick=function(){
+	var val=aInp1[0].value;
+	if(!val){
+		alert('输入为空！')
+	}else if(str.indexOf(val)==-1){
+		alert('未找到');
+	}else{
+		oP.innerHTML=str.split(val).join('<span>'+val+'</span>');
+		aInp1[0].value='';
+	}
+}
+aInp2[2].onclick=function(){
+	var val1=aInp2[0].value;
+	var val2=aInp2[1].value;
+	var str1=oP.innerHTML;
+	if(!val1){
+		alert('请输入替换内容');
+		return false;
+	}else{
+		if(!val2){
+			if(confirm('你确定要删除吗？')){
+				oP.innerHTML=str1.split(val1).join('');
+			}else{
+				return;
+			}
+		}else{
+			oP.innerHTML=str1.split(val1).join(val2);
+		}
+	}
+	aInp2[0].value=aInp2[1].value='';
+}
+</script>
+</body>
+</html>
