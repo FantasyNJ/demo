@@ -1,0 +1,11 @@
+form div{margin: 10px;}
+th, td{width: 200px;text-align: center;}
+td{height: 30px;}
+
+.grey{background: #E6E6E6;}
+
+.inp{text-align: center;line-height: 100%;display: none;}
+.file-inp{width: 100px;vertical-align: middle;}
+.file-btn{display: inline-block;width: 22px;height: 22px;background: url(../img/file-icon.png) no-repeat;vertical-align: middle;margin-left: 5px;cursor: pointer;}
+.file-btn1{background-position: 0 0;}
+.file-btn2{background-position: -27px 0;}

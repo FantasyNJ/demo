@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表格</title>
+    <link rel="stylesheet" href="css/1.css">
+</head>
+<body>
+<form id="form">
+    <div>
+        <span>姓名:</span>
+        <input type="text" id="name">
+        <span>年龄:</span>
+        <input type="text" id="age">
+        <span>性别:</span>
+        <select name="sex" id="sex"><option value="男">男</option><option value="女">女</option></select>
+        <input type="button" value="添加" id="btn">
+        <input type="button" value="删除选中" id="r-btn">
+    </div>
+    <div>
+        <span>排序:</span>
+        <select name="op">
+            <option value="id">编号</option>
+            <option value="age">年龄</option>
+        </select>
+        <select name="order">
+            <option value="1">降序</option>
+            <option value="2">升序</option>
+        </select>
+        <input type="button" value="排序" id="rank">
+    </div>
+    <div>
+        <span>搜索:</span>
+        <input type="text" name="sbar">
+        <input type="button" value="搜索" id="search">
+    </div>
+</form>
+<table border="1" id="table">
+    <thead>
+        <th><input type="checkbox" id="all">全选</th>
+        <th>ID</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>操作</th>
+    </thead>
+    <tbody>
+        <!--<td><input type="checkbox"></td>-->
+        <!--<td><span>1</span></td>-->
+        <!--<td><span>你好</span><div class="inp">-->
+            <!--<input class="file-inp" type="text"><span class="file-btn file-btn1"></span><span class="file-btn file-btn2"></span>-->
+        <!--</div></td>-->
+        <!--<td><span>22</span><div class="inp">-->
+            <!--<input class="file-inp" type="text"><span class="file-btn file-btn1"></span><span class="file-btn file-btn2"></span>-->
+        <!--</div></td>-->
+        <!--<td><span>男</span><div class="inp">-->
+            <!--<select><option value="男">男</option><option value="女">女</option></select><span class="file-btn file-btn1"></span><span class="file-btn file-btn2"></span>-->
+        <!--</div></td>-->
+        <!--<td><a href="javascript:;">上移</a>|<a href="javascript:;">下移</a>|<a href="javascript:;">删除</a></td>-->
+    </tbody>
+</table>
+<script src="js/1.js"></script>
+</body>
+</html>

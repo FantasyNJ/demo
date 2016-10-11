@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>日历(中国版)</title>
+    <link rel="stylesheet" href="css/2.css"/>
+</head>
+<body>
+<div class="parent clearfix">
+    <div class="box">
+        <div class="time">
+            <span>现在是北京时间：<span id="time"></span></span>
+        </div>
+        <div class="date">
+            <div class="selec">
+                <select name="year" id="year"></select><span>年</span>
+                <select name="month" id="month"></select><span>月</span>
+            </div>
+            <div class="btn">
+                <input type="button" value="<" class="btn1" id="prev"/>
+                <input type="button" value=">" class="btn2" id="next"/>
+                <input type="button" value="回到今天" class="btn3" id="now"/>
+            </div>
+        </div>
+        <table class="table" id="table">
+            <thead>
+                <th>一</th>
+                <th>二</th>
+                <th>三</th>
+                <th>四</th>
+                <th>五</th>
+                <th class="weekend-th">六</th>
+                <th class="weekend-th">日</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <div class="box-r"></div>
+</div>
+<script src="js/2.js"></script>
+</body>
+</html>
