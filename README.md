@@ -5,4 +5,6 @@
 [表格](http://demo.ayabala.com/demo/table/)  
 [招聘信息页](http://demo.ayabala.com/demo/search_hash/)  
 [小蜜蜂游戏](http://demo.ayabala.com/smallbee/)  
-[React版todolist](http://demo.ayabala.com/React-todolist/)
+[React版todolist](http://demo.ayabala.com/React-todolist/)  
+[仿MAC OS DOCK栏](http://demo.ayabala.com/macdock/)  
+[圆形导航](http://demo.ayabala.com/circlenav/)
