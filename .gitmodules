@@ -13,12 +13,16 @@
 [submodule "macdock"]
 	path = macdock
 	url = git@github.com:FantasyNJ/macdock.git
+	branch = gh-pages
 [submodule "licaibao"]
 	path = licaibao
 	url = git@github.com:FantasyNJ/licaibao.git
+	branch = gh-pages
 [submodule "circlenav"]
 	path = circlenav
 	url = git@github.com:FantasyNJ/circlenav.git
+	branch = gh-pages
 [submodule "photoWall-react"]
 	path = photoWall-react
 	url = git@github.com:FantasyNJ/photoWall-react.git
+	branch = gh-pages
